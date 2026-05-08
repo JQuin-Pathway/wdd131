@@ -5,14 +5,84 @@
 }
 
 :root {
-    --primary-color: #13a18e;
-    --secondary-color: #818181;
+    --primary-color: #ffffff;
+    --secondary-color: #1d5969;
+    --tietary-color: #474747;
     --accent1-color: #ffffff;
     --accent2-color: #000000;
+    --accent3-color: #fbff00;
     --heading-font: "Times New Roman", serif;
     --body-font: Arial, sans-serif;
 }
 
+body {
+    font-family: var(--body-font);
+    background-color: var(--primary-color);
+}
+
 header {
-    display: block;
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--tietary-color);
+    padding: 10px 0;
+}
+
+header nav a {
+    color: var(--accent1-color);
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+ 
+.card {
+    background-color: var(--accent1-color);
+    border: 1px solid var(--accent1-color);
+    border-radius: 10px;
+    flex: 1 1 300px;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.card h2 {
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    padding: 10px;
+    text-align: center;
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.lastmodify {
+    color: var(--accent3-color);
 }

@@ -89,7 +89,7 @@ main {
 
 .card {
     background-color: var(--accent1-color);
-    border: 1px solid #ddd;
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
     overflow: hidden;
     text-align: center;

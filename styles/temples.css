@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #1d5969;
+    --tertiary-color: #474747;
+    --accent1-color: #ffffff;
+    --accent2-color: #000000;
+    --accent3-color: #fbff00;
+    --heading-font: 'Montserrat', sans-serif;
+}

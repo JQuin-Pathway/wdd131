@@ -1,0 +1,40 @@
+@media screen and (min-width: 500px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        background-color: transparent;
+        gap: 20px;
+    }
+
+    header nav a {
+        padding: 5px 10px;
+        border-bottom: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex !important;
+    flex-direction: row;
+    background-color: transparent;
+    gap: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}

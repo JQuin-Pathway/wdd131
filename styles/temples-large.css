@@ -33,8 +33,10 @@
     gap: 20px;
     }
 
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .temple {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 30px;
+        justify-content: center;
+        justify-items: center;
     }
 }

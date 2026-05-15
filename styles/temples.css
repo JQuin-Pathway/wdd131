@@ -50,6 +50,10 @@ nav a:hover {
     color: var(--accent3-color);
     background-color: var(--accent2-color);
 }
+h1 {
+    text-align: center;
+    padding: 10px;
+}
 
 #menu {
     position: absolute;
@@ -102,10 +106,12 @@ figure {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    justify-content: center;
 }
 
 figure img {
-    width: 100%;
+    max-width: 100%;
+    width: 800px;
     height: auto;
     display: block;
 }

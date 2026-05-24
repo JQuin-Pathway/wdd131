@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css" media="(min-width: 768px)">
+    <script src="scripts/place.js" defer></script>
+    <title>Place Explorer — Details & Discovery Layout</title>
+</head>
+<body>
+   <header class="header-banner">
+        <div class="place-title-box">
+            Japan
+        </div>
+    </header>
+    <main class="content-workspace">
+        <img src="images/japan-1.jpg" alt="">
+        <section class="image-canvas" role="img" aria-label="Mount Fuji Landscape Background View">
+            <span class="canvas-label-fallback" id="canvasText">Small Image View</span>
+        </section>
+        <article class="wireframe-card left-data-card">
+            <div class="card-tab-header">Data</div>
+            <ul class="data-property-list" id="japanDataGrid">
+            </ul>
+        </article>
+
+        <aside class="wireframe-card right-weather-card">
+            <div class="card-tab-header">
+                <span>Weather</span>
+                <div class="weather-tab-icon"></div>
+            </div>
+            <ul class="data-property-list" id="japanWeatherGrid">
+            </ul>
+        </aside>
+
+    </main>
+    <footer class="footer-banner">
+        <p>©<span id="year"></span> | Jackson G Quinton | Arizona</p>
+        <p class="lastmodify">Last Modifcation: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

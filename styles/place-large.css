@@ -32,8 +32,10 @@
 
 .left-data-card {
     grid-column: 1 / span 4;
+    align-self: start;
     z-index: 2;
     margin-left: 2rem;
+    margin-top: 2rem;
     text-align: left;
 }
 
@@ -43,8 +45,10 @@
 
 .right-weather-card {
     grid-column: 9 / span 4;
+    align-self: end;
     z-index: 2;
     margin-right: 2rem;
+    margin-bottom: 2rem;
     text-align: left;
 }
 

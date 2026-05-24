@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
     }
     function evaluateResponsiveTextLayoutWidth() {
+        if (!displayLabelNode) return;
         if (window.innerWidth >= 900) {
             displayLabelNode.textContent = "Large Image";
         } else {
@@ -43,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', evaluateResponsiveTextLayoutWidth);
     evaluateResponsiveTextLayoutWidth();
 });
-const currentYear = new Date().getFullYear();
-const lastModified = document.getElementById("lastModified").innerHTML = document.lastModified;
 
-document.querySelector("#year").textContent = currentYear;
+const currentYear = new Date().getFullYear();
+const yearElement = document.getElementById("year");
+if (yearElement) yearElement.textContent = currentYear;
+
+const modifiedElement = document.getElementById("lastModified");
+if (modifiedElement) modifiedElement.textContent = document.lastModified;

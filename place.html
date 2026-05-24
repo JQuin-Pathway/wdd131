@@ -17,16 +17,15 @@
     </header>
     <main class="content-workspace">
         <picture class="hero-picture">
-            <source srcset="images/japan-1.webp" alt="A picture of Mount Fuji." media="(min-width: 768px)">
-            <img src="images/japan-2.webp" alt="A picture of japan with a pogoda." class="hero-img" loading="eager">
+            <source srcset="images/japan-1.webp" media="(min-width: 768px)">
+            <img src="images/japan-2.webp" alt="A picture of Mount Fuji with a pagoda in the foreground." class="hero-img" loading="eager">
         </picture>
-        <section class="image-canvas" role="img" aria-label="Mount Fuji Landscape Background View">
+        <section class="image-canvas" role="region" aria-label="Mount Fuji Landscape Background View">
             <span class="canvas-label-fallback" id="canvasText">Small Image View</span>
         </section>
         <article class="wireframe-card left-data-card">
             <div class="card-tab-header">Data</div>
-            <ul class="data-property-list" id="japanDataGrid">
-            </ul>
+            <ul class="data-property-list" id="japanDataGrid"></ul>
         </article>
         <aside class="wireframe-card right-weather-card">
             <div class="card-tab-header">
@@ -36,10 +35,8 @@
                     <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"></path>
                 </svg>
             </div>
-            <ul class="data-property-list" id="japanWeatherGrid">
-            </ul>
+            <ul class="data-property-list" id="japanWeatherGrid"></ul>
         </aside>
-
     </main>
     <footer class="footer-banner">
         <p>©<span id="year"></span> | Jackson G Quinton | Arizona</p>

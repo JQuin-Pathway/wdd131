@@ -29,14 +29,6 @@ header {
     flex-direction: column;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column; 
-    background-color: var(--tertiary-color);
-    width: 100%;
-}
-
 header nav a {
     color: var(--accent1-color);
     text-decoration: none;
@@ -90,16 +82,15 @@ main {
     padding: 15px;
 }
 
-main h2 {
-    font-family:  var(--heading-font);
-    text-align: center;
-    gap: 15px;
-}
-
 figure {
-    background-color: var(--primary-color);
-    border: 1px solid var(--accent1-color);
-    box-shadow: 0 2px 5px var(--accent2-color);
+    background-color: #ededed;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .temple {
@@ -109,11 +100,25 @@ figure {
     justify-content: center;
 }
 
+figure p {
+    font-size: 0.9rem;
+    margin: 3px 0;
+    color: #333333;
+}
+
+figure .label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #000000;
+}
+
 figure img {
     max-width: 100%;
-    width: 800px;
     height: auto;
     display: block;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 figcaption {

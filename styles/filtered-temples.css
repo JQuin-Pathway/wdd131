@@ -38,6 +38,11 @@ header nav a {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
 nav a:hover {
     color: var(--accent3-color);
     background-color: var(--accent2-color);
@@ -69,7 +74,6 @@ h1 {
 .hamburger {
     list-style: none;
     display: none;
-    flex-direction: column;
     background-color: var(--tertiary-color);
     width: 100%;
 }

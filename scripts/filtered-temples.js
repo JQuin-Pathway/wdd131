@@ -6,7 +6,7 @@ hambutton.addEventListener('click', () => {
     hambutton.classList.toggle('show');
 });
 
-const temples = [
+const temple = [
   {
     templeName: "Aba Nigeria",
     location: "Aba, Nigeria",

@@ -6,7 +6,7 @@ hambutton.addEventListener('click', () => {
     hambutton.classList.toggle('show');
 });
 
-const temple = [
+const temples = [
   {
     templeName: "Aba Nigeria",
     location: "Aba, Nigeria",
@@ -62,5 +62,97 @@ const temple = [
     area: 116642,
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+  },
+  {
+    templeName: "Gilbert Arizona",
+    location: "Gilbert, Arizona",
+    dedicated: "2014, March, 2",
+    area: 85326,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/gilbert-arizona/400x250/gilbert-arizona-lds-temple-1172166-wallpaper.jpg"
+  },
+  {
+  templeName: "Rexbug Idaho",
+  location: "Rexburg, Idaho",
+  dedicated: "2008, February, 10",
+  area: 57504,
+  imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rexburg-idaho/400x250/rexburg-temple-775365-wallpaper.jpg",
+  },
+   {
+  templeName: "Kyiv Ukraine",
+  location: "Kyivs'ka Oblast, Ukraine",
+  dedicated: "2010, August, 29",
+  area: 22184,
+  imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-lds-temple-1129616-wallpaper.jpg",
   }
 ]
+
+createTempleCard(temples);
+
+const oldLink = document.querySelector(".old");
+const newLink = document.querySelector(".new");
+const largeLink = document.querySelector(".large");
+const smallLink = document.querySelector(".small");
+
+oldLink.addEventListener("click", () => {
+  const sortedTemples = [...temples].sort((a, b) => {
+    const yearA = parseInt(a.dedicated.split(",")[0]);
+    const yearB = parseInt(b.dedicated.split(",")[0]);
+    return yearA - yearB;
+  });
+  createTempleCard(sortedTemples);
+});
+
+newLink.addEventListener("click", () => {
+  const sorted = [...temples].sort((a, b) => {
+    const yearA = parseInt(a.dedicated.split(","));
+    const yearB = parseInt(b.dedicated.split(","));
+    return yearB - yearA;
+  });
+  createTempleCard(sorted);
+});
+
+largeLink.addEventListener("click", () => {
+  const sorted = [...temples].sort((a, b) => {
+    return b.area - a.area;
+  });
+  createTempleCard(sorted);
+});
+
+smallLink.addEventListener("click", () => {
+  const sorted = [...temples].sort((a, b) => {
+    return a.area - b.area;
+  });
+  createTempleCard(sorted);
+});
+
+function createTempleCard(templesList) {
+  const container = document.querySelector(".temple");
+  container.innerHTML = "";
+  
+  templesList.forEach(temple => {
+    let card = document.createElement("section");
+    let name = document.createElement("h3");
+    let location = document.createElement("p");
+    let dedication = document.createElement("p");
+    let area = document.createElement("p");
+    let img = document.createElement("img");
+  
+    name.textContent = temple.templeName;
+    
+    location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+    dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+    area.innerHTML = `<span class="label">Size:</span> ${temple.area.toLocaleString()} sq ft`;
+
+    img.setAttribute("src", temple.imageUrl);
+    img.setAttribute("alt", `${temple.templeName} Temple`);
+    img.setAttribute("loading", "lazy");
+
+    card.appendChild(name);
+    card.appendChild(location);
+    card.appendChild(dedication);
+    card.appendChild(area);
+    card.appendChild(img);
+
+    container.appendChild(card);
+  });
+}

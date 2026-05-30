@@ -24,9 +24,21 @@
     }
 
     .temple {
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
-        justify-content: center;
-        justify-items: center;
+        align-items: start;
+    }
+
+    .temple section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .temple section img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }

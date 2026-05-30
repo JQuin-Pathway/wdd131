@@ -88,41 +88,45 @@ const temples = [
 
 createTempleCard(temples);
 
-const oldLink = document.querySelector(".old");
-const newLink = document.querySelector(".new");
-const largeLink = document.querySelector(".large");
-const smallLink = document.querySelector(".small");
+const homeLink = document.querySelector("#home");
+const oldLink = document.querySelector("#old");
+const newLink = document.querySelector("#new");
+const largeLink = document.querySelector("#large");
+const smallLink = document.querySelector("#small");
 
-oldLink.addEventListener("click", () => {
-  const sortedTemples = [...temples].sort((a, b) => {
-    const yearA = parseInt(a.dedicated.split(",")[0]);
-    const yearB = parseInt(b.dedicated.split(",")[0]);
-    return yearA - yearB;
-  });
-  createTempleCard(sortedTemples);
+homeLink.addEventListener("click", (e) => {
+  heading.textContent = "Home";
+  createTempleCard(temples);
 });
 
-newLink.addEventListener("click", () => {
-  const sorted = [...temples].sort((a, b) => {
-    const yearA = parseInt(a.dedicated.split(","));
-    const yearB = parseInt(b.dedicated.split(","));
-    return yearB - yearA;
+oldLink.addEventListener("click", (e) => {
+  heading.textContent = "Old Temples";
+  const filtered = temples.filter(temple => {
+    const year = parseInt(temple.dedicated.split(",")[0]);
+    return year < 1900;
   });
-  createTempleCard(sorted);
+  createTempleCard(filtered);
 });
 
-largeLink.addEventListener("click", () => {
-  const sorted = [...temples].sort((a, b) => {
-    return b.area - a.area;
+newLink.addEventListener("click", (e) => {
+  heading.textContent = "New Temples";
+  const filtered = temples.filter(temple => {
+    const year = parseInt(temple.dedicated.split(",")[0]);
+    return year > 2000;
   });
-  createTempleCard(sorted);
+  createTempleCard(filtered);
 });
 
-smallLink.addEventListener("click", () => {
-  const sorted = [...temples].sort((a, b) => {
-    return a.area - b.area;
-  });
-  createTempleCard(sorted);
+largeLink.addEventListener("click", (e) => {
+  heading.textContent = "Large Temples";
+  const filtered = temples.filter(temple => temple.area > 90000);
+  createTempleCard(filtered);
+});
+
+smallLink.addEventListener("click", (e) => {
+  heading.textContent = "Small Temples";
+  const filtered = temples.filter(temple => temple.area < 10000);
+  createTempleCard(filtered);
 });
 
 function createTempleCard(templesList) {

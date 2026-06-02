@@ -62,7 +62,6 @@ ul {
     border-radius: 0 4px 4px 0;
 }
 
-/* WIREFRAME SCHEMATIC VISUALS */
 .wireframe-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -115,11 +114,16 @@ ul {
     border-radius: 4px;
 }
 
+
 .wf-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
+
+.h-50 { height: 50px; }
+.h-70 { height: 70px; }
+.h-90 { height: 90px; }
 
 footer {
     text-align: center;

@@ -1,0 +1,131 @@
+@import url('https://googleapis.com');
+
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #f0f7ff;
+    --accent-color: #2ecc71;
+    --text-color: #2c3e50;
+    --white: #ffffff;
+    --border-color: #bdc3c7;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fafbfc;
+}
+
+header {
+    border-bottom: 4px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+section {
+    background-color: var(--secondary-color);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    border: 1px solid #e1ecf7;
+}
+
+p, li {
+    font-size: 1rem;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.accent-text {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.highlight-box {
+    background-color: var(--white);
+    border-left: 4px solid var(--accent-color);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* WIREFRAME SCHEMATIC VISUALS */
+.wireframe-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .wireframe-container {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.wireframe-box {
+    border: 2px dashed var(--border-color);
+    background: var(--white);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.wireframe-box h3 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.wf-element {
+    background: #eaeded;
+    border: 1px solid #d5dbdb;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #5d6d7e;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.wf-desktop-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eaeded;
+    border: 1px solid #d5dbdb;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #5d6d7e;
+    border-radius: 4px;
+}
+
+.wf-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}

@@ -1,5 +1,6 @@
 const mainnav = document.querySelector('.hamburger');
 const hambutton = document.querySelector('#menu');
+const heading = document.querySelector('main h1'); 
 
 hambutton.addEventListener('click', () => {
     mainnav.classList.toggle('show');
@@ -12,56 +13,49 @@ const temples = [
     location: "Aba, Nigeria",
     dedicated: "2005, August, 7",
     area: 11500,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
   },
   {
     templeName: "Manti Utah",
     location: "Manti, Utah, United States",
     dedicated: "1888, May, 21",
     area: 74792,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
   },
   {
     templeName: "Payson Utah",
     location: "Payson, Utah, United States",
     dedicated: "2015, June, 7",
     area: 96630,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
   },
   {
     templeName: "Yigo Guam",
     location: "Yigo, Guam",
     dedicated: "2020, May, 2",
     area: 6861,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
   },
   {
     templeName: "Washington D.C.",
     location: "Kensington, Maryland, United States",
     dedicated: "1974, November, 19",
     area: 156558,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
   },
   {
     templeName: "Lima Perú",
     location: "Lima, Perú",
     dedicated: "1986, January, 10",
     area: 9600,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
   },
   {
     templeName: "Mexico City Mexico",
     location: "Mexico City, Mexico",
     dedicated: "1983, December, 2",
     area: 116642,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   {
     templeName: "Gilbert Arizona",
@@ -71,21 +65,22 @@ const temples = [
     imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/gilbert-arizona/400x250/gilbert-arizona-lds-temple-1172166-wallpaper.jpg"
   },
   {
-  templeName: "Rexbug Idaho",
-  location: "Rexburg, Idaho",
-  dedicated: "2008, February, 10",
-  area: 57504,
-  imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rexburg-idaho/400x250/rexburg-temple-775365-wallpaper.jpg",
+    templeName: "Rexbug Idaho",
+    location: "Rexburg, Idaho",
+    dedicated: "2008, February, 10",
+    area: 57504,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rexburg-idaho/400x250/rexburg-temple-775365-wallpaper.jpg"
   },
-   {
-  templeName: "Kyiv Ukraine",
-  location: "Kyivs'ka Oblast, Ukraine",
-  dedicated: "2010, August, 29",
-  area: 22184,
-  imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-lds-temple-1129616-wallpaper.jpg",
+  {
+    templeName: "Kyiv Ukraine",
+    location: "Kyivs'ka Oblast, Ukraine",
+    dedicated: "2010, August, 29",
+    area: 22184,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-lds-temple-1129616-wallpaper.jpg"
   }
-]
+];
 
+// Initial page population
 createTempleCard(temples);
 
 const homeLink = document.querySelector("#home");
@@ -95,11 +90,13 @@ const largeLink = document.querySelector("#large");
 const smallLink = document.querySelector("#small");
 
 homeLink.addEventListener("click", (e) => {
+  e.preventDefault();
   heading.textContent = "Home";
   createTempleCard(temples);
 });
 
 oldLink.addEventListener("click", (e) => {
+  e.preventDefault();
   heading.textContent = "Old Temples";
   const filtered = temples.filter(temple => {
     const year = parseInt(temple.dedicated.split(",")[0]);
@@ -109,6 +106,7 @@ oldLink.addEventListener("click", (e) => {
 });
 
 newLink.addEventListener("click", (e) => {
+  e.preventDefault();
   heading.textContent = "New Temples";
   const filtered = temples.filter(temple => {
     const year = parseInt(temple.dedicated.split(",")[0]);
@@ -118,12 +116,14 @@ newLink.addEventListener("click", (e) => {
 });
 
 largeLink.addEventListener("click", (e) => {
+  e.preventDefault();
   heading.textContent = "Large Temples";
   const filtered = temples.filter(temple => temple.area > 90000);
   createTempleCard(filtered);
 });
 
 smallLink.addEventListener("click", (e) => {
+  e.preventDefault();
   heading.textContent = "Small Temples";
   const filtered = temples.filter(temple => temple.area < 10000);
   createTempleCard(filtered);

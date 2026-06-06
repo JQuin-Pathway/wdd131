@@ -208,8 +208,8 @@ footer p {
     }
 
     form > div:nth-of-type(2) > div {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
     }
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thimbles Laundry Home Page.">
+    <meta name="author" content="Jackson Quinton">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/schedule.css">
+    <script src="scripts/home.js" defer></script>
+    <title>Schedule a Pickup | Thimbles Laundry</title>
+</head>
+<body class="page-bg-gray">
+    <header>
+        <a href="home.html" class="logo"><h1>Thimbles</h1></a>
+        <div class="menu-toggle">☰</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="service.html">Services & Pricing</a>
+            <a href="schedule.html" class="cta-btn">Schedule Pickup</a>
+        </nav>
+    </header>
+    <div class="container">
+        <main class="form-block">
+            <h2>Book Your Service Appointment</h2>
+            <p>Sign up below to authorize an at-home concierge pickup or schedule an express locker drop-off.</p>
+            
+            <form id="bookingForm" action="#" method="POST" onsubmit="alert('Thank you! Your request has been logged.'); return false;">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="service-type">Requested Option</label>
+                    <select id="service-type">
+                        <option value="pickup">At-Home Laundry Pickup & Delivery ($25.00)</option>
+                        <option value="instore">In-Store Drop-off Scheduling ($0.00)</option>
+                        <option value="tailoring">Tailoring Fitting Appointment ($45.00)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Fabric Instructions / Rush Surcharge Requests</label>
+                    <textarea id="notes" rows="4" placeholder="Tip: Type 'rush' or 'same-day' to calculate your Scenario 2 surcharge automatically..."></textarea>
+                </div>
+
+                <div class="form-group" style="background: #f0f7ff; padding: 15px; border-radius: 4px; border-left: 4px solid #0066cc;">
+                    <p style="margin: 0; font-weight: 500;">Estimated Total: <span id="costLiveEstimate">$25.00</span></p>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm My Booking</button>
+            </form>
+        </main>
+        <aside class="sidebar">
+            <h3>🪡 Seamstress Status</h3>
+            <p>Our dedicated tailors work carefully to guarantee perfect garment fits.</p>
+            <h4>Tailoring Hours</h4>
+            <p class="sidebar-subtext">Tuesday – Saturday<br>9:00 AM – 4:00 PM</p>
+            <h4>Current Seamstress Wait Times</h4>
+            <p><span class="wait-badge">Hemming: 2 Days</span></p>
+            <p><span class="wait-badge">Suit Resizing: 5 Days</span></p>
+            <p><span class="wait-badge">Zipper Repairs: Next Day</span></p>
+        </aside>
+    </div>
+    <footer class="no-border">
+        <div>
+            <h4>Thimbles Laundry</h4>
+            <p>123 Main Street, Townsville</p>
+        </div>
+        <div>
+            <h4>Operating Hours</h4>
+            <p>Mon - Fri: 7:00 AM - 7:00 PM</p>
+        </div>
+        <div>
+            <h4>Legal</h4>
+            <p>Operating License: #L-98231-A</p>
+        </div>
+    </footer>
+
+</body>
+</html>
